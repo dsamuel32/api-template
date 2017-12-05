@@ -5,7 +5,7 @@ let db = null;
 
 module.exports = app => {
     if (!db) {
-        const config = app.libs.config;
+        const config = app.src.libs.config;
         const sequelize = new Sequelize(
             config.database,
             config.username,
@@ -26,7 +26,8 @@ module.exports = app => {
         });
 
         Object.keys(db.models).forEach(key => {
-            db.models[key].associate(db.models);
+           // console.log('>>>', db.models[key])
+           // db.models[key].associate(db.models);
         });
     }
     return db;

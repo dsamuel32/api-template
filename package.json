@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run apidoc && npm run clusters",
-    "clusters": "babel-node src/clusters.js",
+    "clusters": "babel-node src/index.js",
     "test": "SET NODE_ENV=test && mocha test/**/*.js",
-    "apidoc": "apidoc -i src/routes -o public/apidoc"
+    "apidoc": "apidoc -i src/routes -o public/apidoc",
+    "serve": "babel-node src/index.js"
   },
   "apidoc": {
     "name": "Node Task - Documentação de API",
@@ -30,7 +31,7 @@
     "helmet": "^3.9.0",
     "jwt-simple": "^0.5.1",
     "morgan": "^1.9.0",
-    "mysql": "^2.15.0",
+    "mysql2": "^1.5.1",
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.1",
     "pm2": "^2.8.0",

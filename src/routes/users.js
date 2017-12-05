@@ -24,12 +24,12 @@ module.exports = app => {
     app.route("/user")
     .all(app.auth.authenticate())
     .get((req, res) => {
-        Users.findById(req.user.id, {
+        /*Users.findById(req.user.id, {
             atributes: ["id", "name", "email"]}
         )
         .then(result => res.json(result))
         .catch(error => {res.status(412).json({msg: error.message});
-        });
+        });*/
     })
 
     /**

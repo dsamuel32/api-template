@@ -3,13 +3,13 @@ import consign from "consign";
 
 const app = express();
 
-consign({verbose: false})
-    .include("libs/config.js")
-    .then("db.js")
-    .then("auth.js")
-    .then("libs/middlewares.js")
-    .then("routes")
-    .then("libs/boot.js")
+consign({verbose: true})
+    .include("src/libs/config.js")
+    .then("src/db.js")
+    .then("src/auth.js")
+    .then("src/libs/middlewares.js")
+    .then("src/routes")
+    .then("src/libs/boot.js")
     .into(app);
 
 module.exports = app;

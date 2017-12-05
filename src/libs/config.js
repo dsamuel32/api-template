@@ -8,4 +8,4 @@ module.exports = app => {
     }
     return require("./config.development.js");
     
-};
+}
