@@ -1,3 +1,5 @@
+import logger from "./logger.js";
+
 module.exports = {
     database: 'api',
     username: 'root',

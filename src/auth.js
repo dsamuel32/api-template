@@ -1,5 +1,5 @@
 import passport from "passport";
-import {Strategy, ExtractJwt, fromAuthHeader} from "passport-jwt";
+import {Strategy, ExtractJwt} from "passport-jwt";
 
 module.exports = app => {
 
@@ -8,7 +8,7 @@ const cfg = app.src.libs.config;
 
 const params = {
     secretOrKey: cfg.jwtSecret,
-    jwtFromRequest: ExtractJwt.fromAuthHeader()
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
 };
 
 const strategy = new Strategy(params, (payload, done) => {

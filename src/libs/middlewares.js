@@ -25,7 +25,7 @@ module.exports = app => {
     }));
     app.use(compression());
     app.use(bodyParser.json());
-    app.use(app.auth.initialize());
+    app.use(app.src.auth.initialize());
     app.use((req, res, next) => {
         delete req.body.id;
         next();

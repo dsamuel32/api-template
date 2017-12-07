@@ -1,6 +1,6 @@
 module.exports = app => {
     
-    const Users = app.db.models.Users;
+    const Users = app.src.db.models.Users;
 
     /**
      * @api {get} /user Exibe usuário autenticado
@@ -22,7 +22,7 @@ module.exports = app => {
     * HTTP/1.1 412 Precondition Failed
     */
     app.route("/user")
-    .all(app.auth.authenticate())
+    .all(app.src.auth.authenticate())
     .get((req, res) => {
         /*Users.findById(req.user.id, {
             atributes: ["id", "name", "email"]}
