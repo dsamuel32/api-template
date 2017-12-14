@@ -1,4 +1,6 @@
 module.exports = app => {
+
+    const userController = app.controllers.userController;
     /**
     * @api {get} / API Status
     * @apiGroup Status

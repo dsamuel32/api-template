@@ -8,6 +8,7 @@ consign({verbose: false, cwd: 'src'})
     .then("db.js")
     .then("auth.js")
     .then("libs/middlewares.js")
+    .then("controllers")
     .then("routes")
     .then("libs/boot.js")
     .into(app);

@@ -1,5 +1,5 @@
 {
-  "name": "Node Task - Documentação de API",
+  "name": "API Template",
   "template": {
     "forceLanguage": "pt_br"
   },
@@ -10,7 +10,7 @@
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2017-12-13T00:04:29.188Z",
+    "time": "2017-12-14T21:41:44.435Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
