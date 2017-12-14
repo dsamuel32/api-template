@@ -4,10 +4,13 @@ import cors from "cors";
 import morgan from "morgan";
 import compression from "compression";
 import helmet from "helmet";
-import logger from "./logger.js";
+import logger from "../config/logger";
 
 
 module.exports = app => {
+
+    const auth = app.seguranca.auth;
+
     app.set("port", 8080);
     app.set("json spaces", 4);
     app.use(morgan("common", {
@@ -25,7 +28,7 @@ module.exports = app => {
     }));
     app.use(compression());
     app.use(bodyParser.json());
-    app.use(app.auth.initialize());
+    app.use(auth.initialize());
     app.use((req, res, next) => {
         delete req.body.id;
         next();

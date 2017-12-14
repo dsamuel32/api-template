@@ -1,6 +1,7 @@
 module.exports = app => {
     
     const userController = app.controllers.userController;
+    const auth = app.seguranca.auth;
 
     /**
      * @api {get} /user Exibe usuário autenticado
@@ -22,7 +23,7 @@ module.exports = app => {
     * HTTP/1.1 412 Precondition Failed
     */
     app.route("/user")
-    .all(app.auth.authenticate())
+    .all(auth.authenticate())
     .get((req, res) => {
         userController.findById(req.user.id)
         .then(result => res.json(result))

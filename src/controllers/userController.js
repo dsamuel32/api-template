@@ -1,6 +1,6 @@
 module.exports = app => {
 
-    const Users = app.db.models.Users;
+    const Users = app.config.db.models.Users;
 
     app.findById = id => {
         return Users.findById(req.user.id, {atributes: ["id", "name", "email"]});
