@@ -2,7 +2,7 @@ import passport from "passport";
 import {Strategy, ExtractJwt} from "passport-jwt";
 
 module.exports = app => {
-    console.log('>>', app.config.db.models.Users)
+    
     const Users = app.config.db.models.Users;
     const cfg = app.config.config;
 

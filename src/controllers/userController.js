@@ -14,6 +14,14 @@ module.exports = app => {
         return Users.create(user);
     }
 
+    app.isPassword = (encodedPassword, password) => {
+        return Users.prototype.isPassword(encodedPassword, password);
+    }
+
+    app.findOne = email => {
+        return Users.findOne({where: {email: email}})
+    }
+
     return app;
     
 }

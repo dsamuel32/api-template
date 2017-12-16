@@ -82,7 +82,7 @@ module.exports = app => {
     * HTTP/1.1 412 Precondition Failed
     */
     app.post("/users", (req, res) => {
-        userController.create(req.body)
+        userController.save(req.body)
         .then(result => res.json(result))
         .catch(error => {
             res.status(412).json({msg: error.message});

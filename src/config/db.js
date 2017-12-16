@@ -24,14 +24,12 @@ module.exports = app => {
         fs.readdirSync(dir).forEach(file => {
             const modelDir = path.join(dir, file);
             const model = sequelize.import(modelDir);
-            console.log('name', model.name);
-            console.log('entity', modelDir)
             db.models[model.name] = model;
         });
 
         Object.keys(db.models).forEach(key => {
-           // console.log('>>>', db.models[key])
-           // db.models[key].associate(db.models);
+           //db.models[key].associate(db.models);
+           //db[modelName].associate(db);
         });
     }
 
