@@ -8,7 +8,7 @@ module.exports = app => {
             cert: fs.readFileSync("api.cert", "utf8")
         }
 
-        app.db.sequelize.sync().done(() => {
+        app.config.db.sequelize.sync().done(() => {
             https.createServer(credentials, app)
                 .listen(app.get("port"), () => {
                     console.log(`Entrega API - porta ${app.get("port")}`);

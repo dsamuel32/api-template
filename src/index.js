@@ -5,7 +5,7 @@ const app = express();
 
 consign({verbose: false, cwd: 'src'})
     .include("config/config.js")
-    .then("config/bd.js")
+    .then("config/db.js")
     .then("seguranca/auth.js")
     .then("libs/middlewares.js")
     .then("controllers")

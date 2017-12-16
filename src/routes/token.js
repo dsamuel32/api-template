@@ -1,8 +1,8 @@
 import jwt from "jwt-simple";
 
 module.exports = app => {
-    const cfg = app.libs.config;
-    const Users = app.db.models.Users;
+    const cfg = app.config.config;
+    const Users = app.config.db.models.Users;
 
     /**
      * @api {post} /token Token autenticado
