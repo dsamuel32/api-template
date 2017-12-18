@@ -5,10 +5,10 @@ const app = express();
 
 consign({verbose: false, cwd: 'src'})
     .include("config/config.js")
-    .then("config/db.js")
+    .then("config/db.js")        
+    .then("controllers")
     .then("seguranca/auth.js")
     .then("server/middlewares.js")
-    .then("controllers")
     .then("routes")
     .then("server/boot.js")
     .into(app);

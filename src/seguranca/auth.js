@@ -3,7 +3,7 @@ import {Strategy, ExtractJwt} from "passport-jwt";
 
 module.exports = app => {
     
-    const Users = app.config.db.models.Users;
+    const userController = app.controllers.userController;
     const cfg = app.config.config;
 
     const params = {
@@ -12,7 +12,7 @@ module.exports = app => {
     };
 
     const strategy = new Strategy(params, (payload, done) => {
-        Users.findById(payload.id)
+        userController.findById(payload.id)
             .then(user => {
                 if (user) {
                     return done(null, {
