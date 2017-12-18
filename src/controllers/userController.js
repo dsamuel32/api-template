@@ -3,7 +3,7 @@ module.exports = app => {
     const Users = app.config.db.models.Users;
 
     app.findById = id => {
-        return Users.findById(req.user.id, {atributes: ["id", "name", "email"]});
+        return Users.findById(id, {atributes: ["id", "name", "email"]});
     }
 
     app.delete = id => {

@@ -8,7 +8,7 @@ module.exports = app => {
 
     const params = {
         secretOrKey: cfg.jwtSecret,
-        jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
+        jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer')
     };
 
     const strategy = new Strategy(params, (payload, done) => {
@@ -26,6 +26,7 @@ module.exports = app => {
     });
 
     passport.use(strategy);
+
     return {
         initialize: () => {
             return passport.initialize();
