@@ -1,5 +1,5 @@
 module.exports = {
-    database: 'api',
+    database: 'api-teste',
     username: 'root',
     password: 'root',
     params: {

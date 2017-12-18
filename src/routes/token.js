@@ -30,7 +30,7 @@ module.exports = app => {
         .then(user => {
             if (userController.isPassword(user.password, password)) {
                 const payload = {id: user.id};
-                res.json({success: true, token: 'Bearer ' + jwt.encode(payload, cfg.jwtSecret)});
+                res.json({success: true, token: `Bearer ${jwt.encode(payload, cfg.jwtSecret)}`});
                 
             } else {
                 res.sendStatus(401);
