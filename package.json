@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run apidoc && nodemon --exec npm run serve",
     "clusters": "babel-node src/server/clusters.js",
-    "test": "SET NODE_ENV=test && mocha test/**/*.js",
+    "test-integration": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
     "apidoc": "apidoc -i src/routes -o public/apidoc",
     "serve": "babel-node src/index.js",
     "production": "pm2 start --exec npm run clusters --name api-template"
