@@ -1,27 +1,15 @@
-module.exports = app => {
-
+module.exports = (app) => {
     const Users = app.config.db.models.Users;
 
-    app.findById = id => {
-        return Users.findById(id, {atributes: ["id", "name", "email"]});
-    }
+    app.findById = id => Users.findById(id, { atributes: ['id', 'name', 'email'] });
 
-    app.delete = id => {
-        return Users.destroy({where: {id: id} });
-    }
+    app.delete = id => Users.destroy({ where: { id } });
 
-    app.save = user => {
-        return Users.create(user);
-    }
+    app.save = user => Users.create(user);
 
-    app.isPassword = (encodedPassword, password) => {
-        return Users.prototype.isPassword(encodedPassword, password);
-    }
+    app.isPassword = (encodedPassword, password) => Users.prototype.isPassword(encodedPassword, password);
 
-    app.findOne = email => {
-        return Users.findOne({where: {email: email}})
-    }
+    app.findOne = email => Users.findOne({ where: { email } });
 
     return app;
-    
-}
+};

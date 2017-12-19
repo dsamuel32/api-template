@@ -1,6 +1,6 @@
-import jwt from "jwt-simple";
+import jwt from 'jwt-simple';
 
-module.exports = app => {
+module.exports = (app) => {
     const cfg = app.config.config;
     const userController = app.controllers.userController;
 
@@ -20,27 +20,27 @@ module.exports = app => {
     * {"token": "xyz.abc.123.hgf"}
     * @apiErrorExample {json} Erro de autenticação
     * HTTP/1.1 401 Unauthorized
-    */
-    app.post("/token", (req, res) => {
-    if (req.body.email && req.body.password) {
-        const email = req.body.email;
-        const password = req.body.password;
-        
-        userController.findOne(email)
-        .then(user => {
-            if (userController.isPassword(user.password, password)) {
-                const payload = {id: user.id};
-                res.json({success: true, token: `Bearer ${jwt.encode(payload, cfg.jwtSecret)}`});
-                
-            } else {
+    */ 
+    app.post('/token', (req, res) => {
+        if (req.body.email && req.body.password) {
+            const email = req.body.email;
+            const password = req.body.password;
+
+            userController.findOne(email)
+            .then((user) => {
+                if (userController.isPassword(user.password, password)) {
+                    const payload = { id: user.id };
+                    res.json({ success: true, token: `Bearer ${jwt.encode(payload, cfg.jwtSecret)}` });
+                } else {
+                    res.sendStatus(401);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
                 res.sendStatus(401);
-            }
-        })
-        .catch(error => {
-            console.log(error)
-            res.sendStatus(401)});
-    } else {
-        res.sendStatus(401);
-    }
+            });
+        } else {
+            res.sendStatus(401);
+        }
     });
 };

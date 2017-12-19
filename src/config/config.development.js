@@ -1,4 +1,4 @@
-import logger from "./logger.js";
+import logger from './logger.js';
 
 module.exports = {
     database: 'api',
@@ -10,9 +10,9 @@ module.exports = {
             logger.info(`[${new Date()}] ${sql}`);
         },
         define: {
-            underscore: true
-        }
+            underscore: true,
+        },
     },
-    jwtSecret: "Nta$K-AP1",
-    jwtSession: {session: false}
-}
+    jwtSecret: 'Nta$K-AP1',
+    jwtSession: { session: false },
+};

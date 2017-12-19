@@ -6,9 +6,9 @@ module.exports = {
         dialect: 'mysql',
         logging: false,
         define: {
-            underscore: true
-        }
+            underscore: true,
+        },
     },
-    jwtSecret: "#teste-@AP1",
-    jwtSession: {session: false}
+    jwtSecret: '#teste-@AP1',
+    jwtSession: { session: false },
 };

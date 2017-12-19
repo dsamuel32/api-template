@@ -1,5 +1,4 @@
-module.exports = app => {
-    
+module.exports = (app) => {
     const userController = app.controllers.userController;
     const auth = app.seguranca.auth;
 
@@ -22,13 +21,14 @@ module.exports = app => {
     * @apiErrorExample {json} Erro de consulta
     * HTTP/1.1 412 Precondition Failed
     */
-    app.route("/user")
-    .all(auth.authenticate())
-    .get((req, res) => {
-        userController.findById(req.user.id)
-        .then(result => res.json(result))
-        .catch(error => {res.status(412).json({msg: error.message});
-        });
+    app.route('/user')
+        .all(auth.authenticate())
+        .get((req, res) => {
+            userController.findById(req.user.id)
+                .then(result => res.json(result))
+                .catch((error) => {
+                    res.status(412).json({ msg: error.message });
+            });
     })
 
     /**
@@ -44,12 +44,12 @@ module.exports = app => {
     */
     .delete((req, res) => {
         userController.delete(req.user.id)
-        .then(result => res.sendStatus(204))
-        .catch(error => {
-            res.status(412).json({msg: error.message});
-        });
+            .then(result => res.sendStatus(204))
+            .catch((error) => {
+                res.status(412).json({ msg: error.message });
+            });
     });
-    
+
     /**
     * @api {post} /users Cadastra novo usuário
     * @apiGroup Usuário
@@ -81,11 +81,11 @@ module.exports = app => {
     * @apiErrorExample {json} Erro no cadastro
     * HTTP/1.1 412 Precondition Failed
     */
-    app.post("/users", (req, res) => {
+    app.post('/users', (req, res) => {
         userController.save(req.body)
-        .then(result => res.json(result))
-        .catch(error => {
-            res.status(412).json({msg: error.message});
+            .then(result => res.json(result))
+            .catch((error) => {
+            res.status(412).json({ msg: error.message });
         });
     });
 };
