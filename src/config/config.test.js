@@ -1,4 +1,4 @@
-export default {
+let config = {
     database: 'api-teste',
     username: 'root',
     password: 'root',
@@ -9,6 +9,8 @@ export default {
             underscore: true,
         },
     },
-    jwtSecret: '#teste-@AP1',
+    jwtSecret: 'teste',
     jwtSession: { session: false },
 };
+
+export default config;

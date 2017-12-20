@@ -419,3 +419,27 @@
 {"level":"info","message":"[Wed Dec 20 2017 20:40:42 GMT-0200 (Horário brasileiro de verão)] Executing (default): SELECT `id`, `name`, `password`, `email`, `createdAt`, `updatedAt` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;","timestamp":"2017-12-20T22:40:42.562Z"}
 {"level":"info","message":"[Wed Dec 20 2017 20:40:42 GMT-0200 (Horário brasileiro de verão)] Executing (default): SELECT `id`, `name`, `password`, `email`, `createdAt`, `updatedAt` FROM `Users` AS `Users` WHERE `Users`.`id` = 1;","timestamp":"2017-12-20T22:40:42.566Z"}
 {"level":"info","message":"::1 - - [20/Dec/2017:22:40:42 +0000] \"GET /user HTTP/1.1\" 200 251\n","timestamp":"2017-12-20T22:40:42.574Z"}
+{"level":"info","message":"[Wed Dec 20 2017 21:02:55 GMT-0200 (Horário brasileiro de verão)] Executing (default): CREATE TABLE IF NOT EXISTS `Users` (`id` INTEGER auto_increment , `name` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL UNIQUE, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE `Users_email_unique` (`email`), PRIMARY KEY (`id`)) ENGINE=InnoDB;","timestamp":"2017-12-20T23:02:55.210Z"}
+{"level":"info","message":"[Wed Dec 20 2017 21:02:55 GMT-0200 (Horário brasileiro de verão)] Executing (default): SHOW INDEX FROM `Users`","timestamp":"2017-12-20T23:02:55.225Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:10:06 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:10:06.156Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:10:06 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:10:06.549Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:10:50 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:10:50.728Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:10:51 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:10:51.000Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:12:06 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:12:06.053Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:12:06 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:12:06.322Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:13:55 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:13:55.668Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:13:55 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:13:55.954Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:15:29 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:15:29.676Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:15:29 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:15:29.916Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:16:30 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:16:30.758Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:16:31 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:16:31.074Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:19:15 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:19:15.480Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:19:15 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:19:15.827Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:20:36 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:20:36.790Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:20:37 +0000] \"GET /user HTTP/1.1\" 200 235\n","timestamp":"2017-12-20T23:20:37.049Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:22:09 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:22:09.056Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:22:09 +0000] \"GET /user HTTP/1.1\" 401 -\n","timestamp":"2017-12-20T23:22:09.345Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:23:46 +0000] \"GET / HTTP/1.1\" 200 28\n","timestamp":"2017-12-20T23:23:46.214Z"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [20/Dec/2017:23:23:46 +0000] \"GET /user HTTP/1.1\" 200 236\n","timestamp":"2017-12-20T23:23:46.517Z"}
+{"level":"info","message":"[Wed Dec 20 2017 21:24:34 GMT-0200 (Horário brasileiro de verão)] Executing (default): CREATE TABLE IF NOT EXISTS `Users` (`id` INTEGER auto_increment , `name` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL UNIQUE, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, UNIQUE `Users_email_unique` (`email`), PRIMARY KEY (`id`)) ENGINE=InnoDB;","timestamp":"2017-12-20T23:24:34.408Z"}
+{"level":"info","message":"[Wed Dec 20 2017 21:24:34 GMT-0200 (Horário brasileiro de verão)] Executing (default): SHOW INDEX FROM `Users`","timestamp":"2017-12-20T23:24:34.424Z"}

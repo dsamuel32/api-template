@@ -1,5 +1,5 @@
 import express from 'express';
-import config from './config/config.development';
+import config from './config/config';
 import datasource from './config/db';
 import bodyParser from 'body-parser';
 import users from './routes/users';
@@ -10,7 +10,10 @@ import middlewares from './server/middlewares'
 
 const app = express();
 
-app.config = config;
+app.config = new config().getConfig();
+
+console.log(app.config)
+
 app.datasource = datasource(app);
 
 middlewares(app);

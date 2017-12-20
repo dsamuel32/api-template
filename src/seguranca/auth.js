@@ -1,13 +1,15 @@
 import passport from 'passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
+
 import UserController from '../controllers/userController';
-import config from '../config/config.development'
+import Config from '../config/config'
 import db from '../config/db'
 
 export default (app) => {
-    
+
     const datasource = db(app);
     const userController = new UserController(datasource.models.Users);
+    const config = new Config().getConfig();
 
     const params = {
         secretOrKey: config.jwtSecret,

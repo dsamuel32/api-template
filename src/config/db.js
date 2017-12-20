@@ -6,7 +6,8 @@ let db = null;
 
 export default (app) => {
     if (!db) {
-        const config = app.config;
+        
+        const config = app.config
         
         const sequelize = new Sequelize(
             config.database,
