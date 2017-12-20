@@ -1,10 +1,10 @@
 import passport from 'passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
+import UserController from '../controllers/userController';
+import cfg from '../config/config';
 
-module.exports = (app) => {
-    const userController = app.controllers.userController;
-    const cfg = app.config.config;
-
+export default (app) => {
+    
     const params = {
         secretOrKey: cfg.jwtSecret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),

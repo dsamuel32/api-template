@@ -1,15 +1,17 @@
-module.exports = (app) => {
-    const Users = app.config.db.models.Users;
+export default class UserController {
 
-    app.findById = id => Users.findById(id, { atributes: ['id', 'name', 'email'] });
+    constructor(Users) {
+        this.Users = Users;
+    }
 
-    app.delete = id => Users.destroy({ where: { id } });
+    findById = Users.findById(id, { atributes: ['id', 'name', 'email'] });
 
-    app.save = user => Users.create(user);
+    delete = id => Users.destroy({ where: { id } });
 
-    app.isPassword = (encodedPassword, password) => Users.prototype.isPassword(encodedPassword, password);
+    save = user => Users.create(user);
 
-    app.findOne = email => Users.findOne({ where: { email } });
+    isPassword = (encodedPassword, password) => Users.prototype.isPassword(encodedPassword, password);
 
-    return app;
-};
+    findOne = email => Users.findOne({ where: { email } });
+    
+}

@@ -1,4 +1,4 @@
-module.exports = (app) => {
+export default (app) => {
     const env = process.env.NODE_ENV;
     if (env) {
         return require('./config.test.js');

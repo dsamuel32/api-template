@@ -1,7 +1,10 @@
-module.exports = (app) => {
-    const userController = app.controllers.userController;
-    const auth = app.seguranca.auth;
+import UserController from '../controllers/userController';
+import auth from '../seguranca/auth';
 
+export default (app) => {
+
+    const userController = new UserController(app.datasource.models.Users);
+    
     /**
      * @api {get} /user Exibe usuário autenticado
     * @apiGroup Usuário
