@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const userController = app.controllers.userController;
+   
     /**
     * @api {get} / API Status
     * @apiGroup Status
@@ -11,4 +11,5 @@ module.exports = (app) => {
     app.get('/', (req, res) => {
         res.json({ status: 'HOME API' });
     });
+    
 };

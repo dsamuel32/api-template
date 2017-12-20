@@ -1,12 +1,16 @@
 import passport from 'passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 import UserController from '../controllers/userController';
-import cfg from '../config/config';
+import config from '../config/config.development'
+import db from '../config/db'
 
 export default (app) => {
     
+    const datasource = db(app);
+    const userController = new UserController(datasource.models.Users);
+
     const params = {
-        secretOrKey: cfg.jwtSecret,
+        secretOrKey: config.jwtSecret,
         jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
     };
 
@@ -28,6 +32,6 @@ export default (app) => {
 
     return {
         initialize: () => passport.initialize(),
-        authenticate: () => passport.authenticate('jwt', cfg.jwtSession),
+        authenticate: () => passport.authenticate('jwt', config.jwtSession),
     };
 };

@@ -1,8 +1,9 @@
 import jwt from 'jwt-simple';
+import UserController from '../controllers/userController'
 
 module.exports = (app) => {
-    const cfg = app.config.config;
-    const userController = app.controllers.userController;
+    const cfg = app.config;
+    const userController = new UserController(app.datasource.models.Users);
 
     /**
      * @api {post} /token Token autenticado

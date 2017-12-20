@@ -5,17 +5,19 @@ import morgan from 'morgan';
 import compression from 'compression';
 import helmet from 'helmet';
 import logger from '../config/logger';
+import auth from '../seguranca/auth'
 
 
-module.exports = (app) => {
-    const auth = app.seguranca.auth;
+export default (app) => {
+    
+    let autenticacao = auth(app);
 
     app.set('port', 8080);
     app.set('json spaces', 4);
     app.use(morgan('common', {
         stream: {
             write: (message) => {
-            logger.info(message);
+                logger.info(message);
             },
         },
     }));
@@ -29,7 +31,7 @@ module.exports = (app) => {
 
     app.use(compression());
     app.use(bodyParser.json());
-    app.use(auth.initialize());
+    app.use(autenticacao.initialize());
     app.use((req, res, next) => {
         delete req.body.id;
         next();

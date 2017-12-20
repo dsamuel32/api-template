@@ -1,6 +1,6 @@
 import logger from './logger.js';
 
-module.exports = {
+let config = {
     database: 'api',
     username: 'root',
     password: 'root',
@@ -16,3 +16,5 @@ module.exports = {
     jwtSecret: 'Nta$K-AP1',
     jwtSession: { session: false },
 };
+
+export default config;

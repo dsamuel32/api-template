@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run lint:fix && npm run apidoc && npm run lint:fix && nodemon --exec npm run serve",
+    "start": "npm run apidoc && nodemon --exec npm run serve",
     "clusters": "babel-node src/server/clusters.js",
     "test-integration": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
     "unit-test": "mocha --opts src/test/unit/mocha.opts src/test/unit/**/*spec.js",

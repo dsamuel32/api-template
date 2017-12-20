@@ -1,8 +1,9 @@
 import UserController from '../controllers/userController';
-import auth from '../seguranca/auth';
+import Auth from '../seguranca/auth';
 
 export default (app) => {
 
+    const auth = Auth(app);
     const userController = new UserController(app.datasource.models.Users);
     
     /**

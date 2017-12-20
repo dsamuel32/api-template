@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     database: 'api-teste',
     username: 'root',
     password: 'root',
