@@ -12,8 +12,6 @@ const app = express();
 
 app.config = new config().getConfig();
 
-console.log(app.config)
-
 app.datasource = datasource(app);
 
 middlewares(app);

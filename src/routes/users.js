@@ -29,10 +29,12 @@ export default (app) => {
         .all(auth.authenticate())
         .get((req, res) => {
             userController.findById(req.user.id)
-                .then(result => res.json(result))
-                .catch((error) => {
-                    res.status(412).json({ msg: error.message });
-            });
+            .then(response => {
+                console.log(response)
+                res.status(response.statusCode);
+                res.json(response.data);
+              })
+              .catch(err => res.status(500));
     })
 
     /**
