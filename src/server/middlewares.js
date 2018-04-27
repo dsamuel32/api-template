@@ -8,7 +8,6 @@ import logger from '../config/logger';
 
 
 module.exports = (app) => {
-    const auth = app.seguranca.auth;
 
     app.set('port', 8080);
     app.set('json spaces', 4);
@@ -29,11 +28,11 @@ module.exports = (app) => {
 
     app.use(compression());
     app.use(bodyParser.json());
-    app.use(auth.initialize());
     app.use((req, res, next) => {
         delete req.body.id;
         next();
     });
 
     app.use(express.static('public'));
+
 };
