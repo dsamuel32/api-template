@@ -7,7 +7,6 @@
     "start": "nodemon --exec npm run serve",
     "clusters": "babel-node src/server/clusters.js",
     "test-integration": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
-    "apidoc": "apidoc -i src/routes -o public/apidoc",
     "serve": "babel-node src/index.js",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "lint:fix": "./node_modules/.bin/eslint src/**/*.js --fix",
@@ -45,7 +44,6 @@
     "ws": "^5.1.1"
   },
   "devDependencies": {
-    "apidoc": "^0.17.6",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "eslint": "^4.9.0",

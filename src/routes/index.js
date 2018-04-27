@@ -8,7 +8,7 @@ module.exports = (app) => {
     * HTTP/1.1 200 OK
     * {"status": "NTask API"}
     */
-    app.get('/', (req, res) => {
+    app.get('/home', (req, res) => {
         res.json({ status: 'HOME API' });
     });
 };
