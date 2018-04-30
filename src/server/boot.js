@@ -10,7 +10,7 @@ module.exports = (app) => {
         };
 
         https.createServer(credentials, app).listen(app.get('port'), () => {
-            console.log(`Video Chat API - porta ${app.get('port')}`);
+            console.log(`Server - porta ${app.get('port')}`);
         });
                 
     }

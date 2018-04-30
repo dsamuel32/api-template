@@ -4,7 +4,7 @@ describe('Routes: Index', () => {
         request.get('/home')
         .expect(200)
         .end((err, res) => {
-            const expected = { status: 'HOME API' };
+            const expected = { page: 'HOME API' };
             expect(res.body).to.eql(expected);
             done(err);
         });

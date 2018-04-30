@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --exec npm run serve",
     "clusters": "babel-node src/server/clusters.js",
-    "test-integration": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
+    "unit-test": "mocha --opts src/test/unit/mocha.opts src/test/unit/**/*spec.js",
+    "integration-test": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
     "serve": "babel-node src/index.js",
     "lint": "./node_modules/.bin/eslint src/**/*.js",
     "lint:fix": "./node_modules/.bin/eslint src/**/*.js --fix",

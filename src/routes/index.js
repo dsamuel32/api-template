@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    const userController = app.controllers.userController;
+    const userController = app.controllers.homeController;
     /**
     * @api {get} / API Status
     * @apiGroup Status
@@ -9,6 +9,6 @@ module.exports = (app) => {
     * {"status": "NTask API"}
     */
     app.get('/home', (req, res) => {
-        res.json({ status: 'HOME API' });
+        res.json(userController.info());
     });
 };
