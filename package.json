@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec npm run serve",
+    "debug": "nodemon --inspect --exec npm run serve",
     "clusters": "babel-node src/server/clusters.js",
     "unit-test": "mocha --opts src/test/unit/mocha.opts src/test/unit/**/*spec.js",
     "integration-test": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
@@ -56,6 +57,7 @@
     "mocha": "^4.0.1",
     "nodemon": "^1.12.2",
     "supertest": "^3.0.0",
+    "swagger-ui-express": "^3.0.8",
     "testdouble": "^3.2.6"
   }
 }

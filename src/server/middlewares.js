@@ -5,7 +5,8 @@ import morgan from 'morgan';
 import compression from 'compression';
 import helmet from 'helmet';
 import logger from '../config/logger';
-
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from '../../public/apidoc/swagger.json';
 
 module.exports = (app) => {
 
@@ -32,6 +33,8 @@ module.exports = (app) => {
         delete req.body.id;
         next();
     });
+
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     app.use(express.static('public'));
 
