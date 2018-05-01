@@ -251,3 +251,8 @@
 {"level":"info","message":"::1 - - [01/May/2018:01:49:20 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 304 -\n","timestamp":"2018-05-01T01:49:20.553Z"}
 {"level":"info","message":"::1 - - [01/May/2018:01:49:20 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:49:20.562Z"}
 {"level":"info","message":"::1 - - [01/May/2018:01:49:28 +0000] \"GET /home HTTP/1.1\" 200 26\n","timestamp":"2018-05-01T01:49:28.285Z"}
+{"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/ HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:54:12.412Z"}
+{"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui-bundle.js HTTP/1.1\" 304 -\n","timestamp":"2018-05-01T01:54:12.431Z"}
+{"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 304 -\n","timestamp":"2018-05-01T01:54:12.439Z"}
+{"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui-init.js HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:54:12.441Z"}
+{"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:54:12.446Z"}

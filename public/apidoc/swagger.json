@@ -1,61 +1,61 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "description": "This is a sample server API Template Node JS.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filterete.",
-    "version": "1.0.0",
-    "title": "Swagger API Template",
-    "termsOfService": "http://swagger.io/terms/",
-    "contact": {
-      "email": "diego.samuel.alves@gmail.com"
-    },
-    "license": {
-      "name": "",
-      "url": ""
-    }
-  },
-  "host": "localhost:8080",
-  "basePath": "/",
-  "tags": [
-    {
-      "name": "home",
-      "description": "Page Teste",
-      "externalDocs": {
-        "description": "Show test http",
-        "url": "home"
-      }
-    }
-  ],
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/home": {
-      "get": {
-        "tags": [
-          "home"
-        ],
-        "summary": "Show test http",
-        "description": "Show test http",
-        "operationId": "teste",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          
-        ],
-        "responses": {
-          "200": {
-            "description": "Ok"
-          }
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server API Template Node JS.",
+        "version": "1.0.0",
+        "title": "Swagger API Template",
+        "termsOfService": "",
+        "contact": {
+            "email": "diego.samuel.alves@gmail.com"
+        },
+        "license": {
+            "name": "",
+            "url": ""
         }
-      }
-    }
-  },
-  "externalDocs": {
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "home",
+            "description": "Page Teste",
+            "externalDocs": {
+            "description": "Show test http",
+            "url": "home"
+            }
+        }
+    ],
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/home": {
+            "get": {
+                "tags": [
+                    "home"
+                ],
+                "summary": "Show test http",
+                "description": "Show test http",
+                "operationId": "teste",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    
+                ],
+                "responses": {
+                    "200": {
+                    "description": "Ok"
+                    }
+                }
+            }
+        }
+    },
+    "externalDocs": {
     "description": "Find out more about Swagger",
     "url": "http://swagger.io"
-  }
+    }
 }

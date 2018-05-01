@@ -1,10 +1,7 @@
 module.exports = (app) => {
-    
 //    app.findById = id => {};
 
-    app.info = () => {
-        return { page: 'HOME API' };
-    };
+  app.info = () => ({ page: 'HOME API' });
 
-    return app;
+  return app;
 };

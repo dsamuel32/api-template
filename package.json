@@ -10,8 +10,8 @@
     "unit-test": "mocha --opts src/test/unit/mocha.opts src/test/unit/**/*spec.js",
     "integration-test": "SET NODE_ENV=test && mocha --opts src/test/integration/mocha.opts src/test/integration/**/*.js",
     "serve": "babel-node src/index.js",
-    "lint": "./node_modules/.bin/eslint src/**/*.js",
-    "lint:fix": "./node_modules/.bin/eslint src/**/*.js --fix",
+    "lint": "./node_modules/.bin/eslint src/**/*.js || exit 0",
+    "lint:fix": "./node_modules/.bin/eslint src/**/*.js --fix || exit 0",
     "production": "pm2 start --exec npm run clusters --name api-template"
   },
   "apidoc": {
