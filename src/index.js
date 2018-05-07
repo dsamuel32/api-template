@@ -4,7 +4,9 @@ import consign from 'consign';
 const app = express();
 
 consign({ verbose: false, cwd: 'src' })
-    .include('controllers')
+    .include('config')
+    .then('models')
+    .then('controllers')
     .then('utils')
     .then('server/middlewares.js')
     .then('routes')

@@ -256,3 +256,15 @@
 {"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 304 -\n","timestamp":"2018-05-01T01:54:12.439Z"}
 {"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui-init.js HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:54:12.441Z"}
 {"level":"info","message":"::1 - - [01/May/2018:01:54:12 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 -\n","timestamp":"2018-05-01T01:54:12.446Z"}
+{"level":"info","message":"::1 - - [06/May/2018:23:43:05 +0000] \"GET /home HTTP/1.1\" 500 -\n","timestamp":"2018-05-06T23:43:05.263Z"}
+{"level":"info","message":"::1 - - [06/May/2018:23:43:05 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150\n","timestamp":"2018-05-06T23:43:05.533Z"}
+{"level":"info","message":"::1 - - [06/May/2018:23:44:08 +0000] \"GET /home HTTP/1.1\" 500 -\n","timestamp":"2018-05-06T23:44:08.596Z"}
+{"level":"info","message":"::1 - - [06/May/2018:23:46:41 +0000] \"GET /home HTTP/1.1\" 200 26\n","timestamp":"2018-05-06T23:46:41.231Z"}
+{"level":"info","message":"::1 - - [06/May/2018:23:47:47 +0000] \"GET /home HTTP/1.1\" 200 26\n","timestamp":"2018-05-06T23:47:47.827Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:02:28 +0000] \"GET /usuario/salvar HTTP/1.1\" 200 19\n","timestamp":"2018-05-07T00:02:28.777Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:11:06 +0000] \"GET /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:11:06.144Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:13:50 +0000] \"POST /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:13:50.435Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:14:19 +0000] \"POST /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:14:19.858Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:14:53 +0000] \"POST /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:14:53.837Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:16:13 +0000] \"POST /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:16:13.750Z"}
+{"level":"info","message":"::1 - - [07/May/2018:00:18:07 +0000] \"POST /usuario/salvar HTTP/1.1\" 200 51\n","timestamp":"2018-05-07T00:18:07.173Z"}
