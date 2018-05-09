@@ -1,8 +1,9 @@
-module.exports = (app) => {
-    const userController = app.controllers.homeController;
+import HomeController from '../controllers/homeController';
 
+module.exports = (app) => {
+    const homeController = new HomeController();
     app.get('/home', (req, res) => {
-        res.json(userController.info());
+        res.json(homeController.info());
     });
     
 };

@@ -1,14 +1,17 @@
-module.exports = app => {
+class UsuarioController {
+    
+    constructor(model) {
+        this.model = model;
+    }
 
-    app.save = (usuario, callback) => {
-        const Usuario = new app.models.usuario(usuario);
-        Usuario.save(error => {
-            if (!error) {
+    save(usuario, callback) {
+        const u = this.model.usuario(usuario);
+        u.save(error => {
+            if (!error) {                
                 callback({mensagem: 'Registro Salvo Com Sucesso!!!'});
             }
-        });
-    };
-
-    return app;
-
+        })
+    }
 }
+
+export default UsuarioController;

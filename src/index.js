@@ -6,8 +6,6 @@ const app = express();
 consign({ verbose: false, cwd: 'src' })
     .include('config')
     .then('models')
-    .then('controllers')
-    .then('utils')
     .then('server/middlewares.js')
     .then('routes')
     .then('server/boot.js')

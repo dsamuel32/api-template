@@ -1,7 +1,9 @@
-module.exports = (app) => {
-//    app.findById = id => {};
+class HomeController {
 
-    app.info = () => ({ page: 'HOME API' });
+    info() {
+        return { page: 'HOME API' };
+    }
+    
+}
 
-    return app;
-};
+export default HomeController;
