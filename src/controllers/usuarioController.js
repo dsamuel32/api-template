@@ -1,17 +1,16 @@
-class UsuarioController {
-    
-    constructor(model) {
-        this.model = model;
-    }
+import Usuario from '../models/usuario';
 
-    save(usuario, callback) {
-        const u = this.model.usuario(usuario);
-        u.save(error => {
+class UsuarioController {
+ 
+    save(dados, callback) {
+        const usuario = new Usuario(dados);
+        usuario.save(error => {
             if (!error) {                
                 callback({mensagem: 'Registro Salvo Com Sucesso!!!'});
             }
         })
     }
+
 }
 
 export default UsuarioController;

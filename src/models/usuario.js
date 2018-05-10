@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-module.exports = () => {
+function createUsuarioSchema() {
+
     const Schema = mongoose.Schema;
     const ObjectId = Schema.ObjectId;
     const UsuarioSchema = new Schema({
@@ -8,6 +9,8 @@ module.exports = () => {
         nome: String,
         email: String,
     });
-
+    
     return mongoose.model('usuario', UsuarioSchema);
 }
+
+export default createUsuarioSchema();
