@@ -1,6 +1,7 @@
 import UsuarioController from '../controllers/usuarioController';
 
 module.exports = (app) => {
+    
     const usuarioController = new UsuarioController();
 
     app.post('/usuario/salvar', (req, res) => {
