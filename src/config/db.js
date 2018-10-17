@@ -8,11 +8,11 @@ export default () => {
 
     if (process.env.NODE_ENV === 'test') {
         dataBase = 'api-test';
-    } if (process.env.NODE_ENV === 'production') {
+    } else if (process.env.NODE_ENV === 'production') {
         dataBase = 'api'
     }
     const url = `mongodb://${host}/${dataBase}`;
-    console.log(url);
+
     mongoose.connect(url);
 
 }

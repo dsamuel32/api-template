@@ -1,4 +1,3 @@
-import { version, name } from '../../package.json';
 import Informacoes from '../models/informacoes'
 
 export default class InfoController {

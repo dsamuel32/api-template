@@ -26,7 +26,8 @@ export default class Logger {
                     maxsize: 1048576,
                     maxFiles: 10,
                     colorize: false
-            })],
+                })
+            ]
         });
     }
 
@@ -40,9 +41,4 @@ export default class Logger {
         });
     }
 
-}
-
-
-if (!fs.existsSync('logs')) {
-    fs.mkdirSync('logs');
 }

@@ -9,7 +9,7 @@ export default class Servidor {
 
     start() {  
         http.createServer(this.app).listen(this.app.get('port'), () => {
-            console.log(`API - Porta ${this.app.get('port')}`);
+            console.info(`API - Porta ${this.app.get('port')}`);
         });
     }
 
