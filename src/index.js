@@ -1,13 +1,5 @@
-import express from 'express';
-import consign from 'consign';
+import Servidor from './config/servidor';
+import info from './routes/info';
 
-const app = express();
-
-consign({ verbose: false, cwd: 'src' })
-    .include('config')
-    .then('server/middlewares.js')
-    .then('routes')
-    .then('server/boot.js')
-    .into(app);
-
-module.exports = app;
+const routes = [info];
+new Servidor(routes).start();

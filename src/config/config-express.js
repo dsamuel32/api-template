@@ -4,27 +4,20 @@ import cors from 'cors';
 import morgan from 'morgan';
 import compression from 'compression';
 import helmet from 'helmet';
-import logger from '../config/logger';
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from '../../public/apidoc/swagger.json';
+import Logger from './logger';
 
-module.exports = (app) => {
-
+function configExpress (routes) {
+    const app = express();
+    const logger = new Logger();
     app.set('port', 8080);
     app.set('json spaces', 4);
-    app.use(morgan('common', {
-        stream: {
-            write: (message) => {
-                logger.info(message);
-            },
-        },
-    }));
+    app.use(logger.logar());
 
     app.use(helmet());
     app.use(cors({
-        origin: ['http://localhost:3000'],
+        origin: ['http://localhost:8080'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'image/*'],
     }));
 
     app.use(compression());
@@ -34,8 +27,17 @@ module.exports = (app) => {
         next();
     });
 
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
     app.use(express.static('public'));
 
-};
+    _registrarRotas
+
+    _registrarRotas(routes, app)
+
+    return app;
+}
+
+function _registrarRotas(routes, app) {
+    for (let route of routes) route(app);
+}
+
+export default configExpress;
