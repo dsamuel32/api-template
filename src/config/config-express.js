@@ -3,8 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
+import swaggerUi from 'swagger-ui-express';
 import Logger from './logger';
-import db from './db'
+import db from './db';
+import swaggerDocument from '../../public/apidoc/swagger.json';
 
 function configExpress (routes) {
     const app = express();
@@ -17,8 +19,8 @@ function configExpress (routes) {
     _configRequests(app);    
 
     app.use(express.static('public'));
-
-    _registrarRotas(routes, app)
+    _swaggerConfig(app);
+    _registrarRotas(routes, app);
 
     return app;
 }
@@ -40,6 +42,10 @@ function _configRequests(app) {
 
 function _registrarRotas(routes, app) {
     for (let route of routes) route(app);
+}
+
+function _swaggerConfig(app) {
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 }
 
 export default configExpress;
