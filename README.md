@@ -1,4 +1,4 @@
-### Template API Rest NodeJS - https://api.travis-ci.org/dsamuel32/api-template.svg?branch=master
+### Template API Rest NodeJS ![Status Build](https://api.travis-ci.org/dsamuel32/api-template.svg?branch=master)
 
 npm install --global --production windows-build-tools
 
