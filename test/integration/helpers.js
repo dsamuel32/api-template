@@ -1,9 +1,9 @@
 import supertest from 'supertest';
 import chai from 'chai';
-import info from '../../src/routes/info'
+import informacoes from '../../src/routes/informacoes'
 import configExpress from '../../src/config/config-express'
 
-const routes = [info];
+const routes = [informacoes];
 const app = configExpress(routes);
 
 global.app = app;

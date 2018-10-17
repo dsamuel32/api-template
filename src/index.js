@@ -1,5 +1,5 @@
 import Servidor from './config/servidor';
-import info from './routes/info';
+import informacoes from './routes/informacoes';
 
-const routes = [info];
+const routes = [informacoes];
 new Servidor(routes).start();

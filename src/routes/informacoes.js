@@ -4,8 +4,10 @@ export default (app) => {
 
     const infoController = new InfoController();
 
-    app.get('/info', (req, res) => {
-        res.json(infoController.info());
+    app.get('/informacoes', (req, res) => {
+        infoController.info(resposta => {
+            res.json(resposta);
+        })        
     });
 
 }

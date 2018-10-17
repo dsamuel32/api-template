@@ -5,10 +5,12 @@ import morgan from 'morgan';
 import compression from 'compression';
 import helmet from 'helmet';
 import Logger from './logger';
+import db from './db'
 
 function configExpress (routes) {
     const app = express();
     const logger = new Logger();
+    db();
     app.set('port', 8080);
     app.set('json spaces', 4);
     app.use(logger.logar());

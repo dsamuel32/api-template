@@ -1,9 +1,13 @@
 import { version, name } from '../../package.json';
+import Informacoes from '../models/informacoes'
 
 export default class InfoController {
 
-    info() {
-        return { name, version };
+    info(callBack) {
+        Informacoes.find({}, function (err, docs) {
+            const [informacao] = docs;
+            callBack(informacao);
+        });
     }
 
 }

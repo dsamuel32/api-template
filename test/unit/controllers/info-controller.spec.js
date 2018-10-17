@@ -1,4 +1,5 @@
-import InfoController from '../../../src/controllers/info-controller'
+import InfoController from '../../../src/controllers/info-controller';
+import Informacoes from '../../../src/models/informacoes';
 
 describe('Controllers: info-controller.js', () => {
 
@@ -14,10 +15,16 @@ describe('Controllers: info-controller.js', () => {
     });
 
     describe('Recupera informações do sistema', () => {
-
+        
         it('Deve recupear as informações do sistema', () => {
-            const experado = { 'name': 'api-template', 'version': '0.0.1' };
-            expect(experado).to.be.eql(infoController.info());
+            td.replace(Informacoes, 'find');
+            const mock = { nome: 'api-template', versao: '1' };
+            td.when(Informacoes.find({})).thenResolve(mock);
+            const experado = { nome: 'api-template', versao: '1' };
+            infoController.info(resposta => {
+                expect(experado).to.be.eql(resposta);
+            });
+            
         });
     });
     
