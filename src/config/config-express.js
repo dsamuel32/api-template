@@ -8,24 +8,27 @@ import Logger from './logger';
 import db from './db';
 import swaggerDocument from '../../public/apidoc/swagger.json';
 
-function configExpress (routes) {
-    const app = express();
-    const logger = new Logger();
+function configExpress(routes) {
+    const app = express();    
     db();
-    app.set('port', 8080);
-    app.set('json spaces', 4);
-    app.use(logger.logar());
     
-    _configRequests(app);    
-
-    app.use(express.static('public'));
+    _serverConfig(app);
+    _configRequests(app); 
     _swaggerConfig(app);
     _registrarRotas(routes, app);
 
     return app;
 }
 
+function _serverConfig(app) {
+    const logger = new Logger();
+    app.set('port', 8080);    
+    app.use(logger.logar());
+    app.use(express.static('public'));
+}
+
 function _configRequests(app) {
+    app.set('json spaces', 4);
     app.use(cors({
         origin: ['http://localhost:8080'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],

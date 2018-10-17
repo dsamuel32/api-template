@@ -1,5 +1,4 @@
 import Informacoes from '../models/informacoes'
-import { info } from 'winston';
 
 export default class InfoController {
 
