@@ -1,10 +1,10 @@
 import http from 'http';
-import configExpress from './config-express';
+import configApp from './config-app';
 
 export default class Servidor {
 
-    constructor(routes) {
-        this.app = configExpress(routes); 
+    constructor() {
+        this.app = configApp(); 
     }
 
     start() {  

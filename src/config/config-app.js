@@ -7,8 +7,11 @@ import swaggerUi from 'swagger-ui-express';
 import Logger from './logger';
 import db from './db';
 import swaggerDocument from '../../public/apidoc/swagger.json';
+import requireDir from 'require-dir';
 
-function configExpress(routes) {
+const routes = requireDir('../routes');
+
+function configApp() {
     const app = express();    
     db();
     
@@ -44,11 +47,13 @@ function _configRequests(app) {
 }
 
 function _registrarRotas(routes, app) {
-    for (let route of routes) route(app);
+    console.log(routes);
+    Object.values(routes).forEach(value => value.default(app));
+    //for (let route of routes) route(app);
 }
 
 function _swaggerConfig(app) {
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 }
 
-export default configExpress;
+export default configApp;
